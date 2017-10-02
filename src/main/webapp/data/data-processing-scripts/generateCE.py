@@ -1,9 +1,11 @@
+# -- coding: utf-8 --
 ###
 ### Copyright Dan Cunnington 2017
 ###
 
 import json, os, uuid
 from pprint import pprint
+from unidecode import unidecode
 
 #for every file in data directory, build query
 ceToWrite = []
@@ -12,12 +14,23 @@ outputDir = '../../ce/facts'
 numberOfFiles = str(len(os.listdir(inputDir)))
 currentFileProcessed = 0
 
+def is_ascii(s):
+  return all(ord(c) < 128 for c in s)
+
+def remove_non_ascii(text):
+  return unidecode(text)
+
 def generateCEForFile(path):
   with open(path) as data_file:    
     data = json.load(data_file)
     road_properties = data["road_properties"]
 
     road_name = road_properties["road-name"]
+    if not is_ascii(road_name):
+      road_name = remove_non_ascii(road_name)
+
+    road_name = road_name.replace("'","\\'")
+    
     overall_distance = road_properties["overall-distance"]
     overall_curvature = road_properties["overall-curvature"]
     road_type = road_properties["road-type"]
