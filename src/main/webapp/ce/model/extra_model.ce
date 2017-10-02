@@ -1,0 +1,48 @@
+conceptualise a ~ detected thing ~ D.
+
+conceptualise an ~ illness ~ I that is a detected thing.
+conceptualise a ~ community ~ C that is a detected thing.
+conceptualise a ~ damage ~ D that is a detected thing.
+conceptualise a ~ family ~ F that is a detected thing.
+conceptualise a ~ route ~ R that is a detected thing.
+
+the entity concept 'community'
+  is expressed by ' village' and
+  is expressed by ' market' and
+  is expressed by ' town'.
+
+the entity concept 'illness'
+  is expressed by ' ill' and
+  is expressed by ' sick' and
+  is expressed by ' unhealthy' and
+  is expressed by ' disease' and
+  is expressed by ' poorly' and
+  is expressed by ' ailing' and
+  is expressed by ' afflicted' and
+  is expressed by ' infirm' and
+  is expressed by ' nauseous' and
+  is expressed by ' unwell'.
+
+-- the entity concept 'sanitation'
+--  is expressed by ' toilet' and
+--  is expressed by ' bathroom' and
+--  is expressed by ' restroom' and
+--  is expressed by ' bog' and
+--  is expressed by ' WC' and
+--  is expressed by ' water closet'.
+
+the entity concept 'damage'
+  is expressed by ' broken' and
+  is expressed by ' pothole' and
+  is expressed by ' repair' and
+  is expressed by ' bust'.
+
+the entity concept 'social'
+  is expressed by ' brother' and
+  is expressed by ' sister' and
+  is expressed by ' mum'.
+
+the entity concept 'route'
+  is expressed by ' path' and
+  is expressed by ' track' and
+  is expressed by ' road'.

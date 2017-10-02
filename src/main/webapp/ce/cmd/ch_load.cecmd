@@ -1,0 +1,28 @@
+-- --------------------------------------------------------------------------
+-- (C) Copyright IBM Corporation  2011, 2017
+-- All Rights Reserved
+-- --------------------------------------------------------------------------
+
+perform reset store with starting uid '1'.
+perform set 'autorun rules' to 'true'.
+
+perform set 'ce root' to 'https://rawgit.com/ce-store/ce-store/master/src/main/webapp/'.
+
+-- Load the general model (core concepts)
+perform load sentences from url '/hudson/ce/core/cmd/load_core.cecmd'.
+perform load sentences from url '/ce/general/model/misc_model.ce'.
+perform load sentences from url '/ce/general/model/spatial_model.ce'.
+perform load sentences from url '/ce/general/model/temporal_model.ce'.
+
+perform set 'ce root' to 'https://rawgit.com/dancunnington/osm-ce/master/src/main/webapp/'.
+
+-- Load the OSM model
+perform load sentences from url '/ce/model/osm_model.ce'.
+--perform load sentences from url '/ce/model/crisishack_model.ce'.
+--perform load sentences from url '/ce/model/extra_model.ce'.
+--perform load sentences from url '/ce/model/crisishack_rules.ce'.
+--perform load sentences from url '/ce/model/crisishack_queries.ce'.
+
+-- Load the data
+perform load sentences from url '/ce/facts/curvature.ce'.
+

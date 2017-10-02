@@ -1,0 +1,92 @@
+[ conv lat-lon ]
+if
+  ( the conversation C includes the person P ) and
+  ( the person P has the value LAT as latitude ) and
+  ( the person P has the value LON as longitude )
+then
+  ( the conversation C has the value LAT as latitude ) and
+  ( the conversation C has the value LON as longitude )
+.
+
+[ infer conversations A ]
+if
+  ( the message M is from the person P ) and
+  ( the message M is to the agency A )
+then
+  ( there is a conversation named C_$P_#-_$A ) and
+  ( the conversation C includes the person P ) and
+  ( the conversation C includes the agency A ) and
+  ( the conversation C has the message M as message )
+.
+
+[ infer conversations B ]
+if
+  ( the message M is to the person P ) and
+  ( the message M is from the agency A )
+then
+  ( there is a conversation named C_$P_#-_$A ) and
+  ( the conversation C includes the person P ) and
+  ( the conversation C includes the agency A ) and
+  ( the conversation C has the message M as message )
+.
+
+[ message from sms ]
+if
+  ( the sms message S is from the number N1 ) and
+  ( the sms message S is to the number N2 ) and
+  ( the sms message S has the value TS as timestamp ) and
+  ( the sms message S has the value MT as message text ) and
+  ( the agent A1 has the number N1 as telephone number ) and
+  ( the agent A2 has the number N2 as telephone number )
+then
+  ( there is a message named M_$A1_#-msg-_$S ) and
+  ( the message M is from the agent A1 ) and
+  ( the message M is to the agent A2 ) and
+  ( the message M has the value TS as timestamp ) and
+  ( the message M has the value MT as message text ) and
+  ( the message M came from the sms message S )
+.
+
+[ real people ]
+if
+  ( there is a real person named P )
+then
+  ( the real person P has 'true' as is real )
+.
+
+[ entity types - core ]
+if
+  ( the message M has the value MT as message text ) and
+  ( there is an entity concept named EC ) and
+  ( the value MT contains the value EC )
+then
+  ( the message M is about the entity concept EC )
+.
+
+[ entity types - synonyms ]
+if
+  ( the message M has the value MT as message text ) and
+  ( the entity concept EC is expressed by the value E ) and
+  ( the value MT contains the value E )
+then
+  ( the categorised message M is about the entity concept EC )
+.
+
+[ link sms to message ]
+if
+  ( the message M came from the sms message S )
+then
+  ( the sms message S led to the message M )
+.
+
+[ shadow person ]
+if
+  ( the sms message S led to no message M ) and
+  ( the sms message S is from the number N ) and
+  ( no person P has the number N as telephone number )
+then
+  ( there is a shadow person named P_#person-_$N ) and
+  ( the shadow person P has the number N as telephone number ) and
+  ( the shadow person P has the value '8.48933006' as latitude ) and
+  ( the shadow person P has the value '-13.28442264' as longitude )
+.

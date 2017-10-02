@@ -1,0 +1,46 @@
+[ entity types - synonyms ]
+for which M, MT and EC is it true that
+  ( the message M has the value MT as message text ) and
+  ( the message M is about the entity concept EC )
+.
+
+[ illness messages ]
+for which C and M is it true that
+  ( the categorised message M is about the entity concept 'illness' ) and
+  ( the conversation C has the message M as message )
+.
+
+[ sanitation messages ]
+for which C and M is it true that
+  ( the categorised message M is about the entity concept 'sanitation' ) and
+  ( the conversation C has the message M as message )
+.
+
+[ community messages ]
+for which C and M is it true that
+  ( the categorised message M is about the entity concept 'community' ) and
+  ( the conversation C has the message M as message )
+.
+
+[ damage messages ]
+for which C and M is it true that
+  ( the categorised message M is about the entity concept 'damage' ) and
+  ( the conversation C has the message M as message )
+.
+
+[ family messages ]
+for which C and M is it true that
+  ( the categorised message M is about the entity concept 'family' ) and
+  ( the conversation C has the message M as message )
+.
+
+[ route messages ]
+for which C and M is it true that
+  ( the categorised message M is about the entity concept 'route' ) and
+  ( the conversation C has the message M as message )
+.
+
+[conversation including person]
+for which V1 and V2 is it true that
+   ( the conversation V2 includes the person V1 )
+.

@@ -1,0 +1,17 @@
+conceptualise a ~ geojson feature ~ GJF that
+  has the value GT as ~ geojson type ~ and
+  has the value C as ~ coordinates ~ and
+  has the value P as ~ properties ~.
+
+conceptualise a ~ road ~ RO that
+  has the value RT as ~ road type ~ and
+  has the value D as ~ distance ~ and
+  has the value OC as ~ overall curvature ~.
+
+conceptualise a ~ road segment ~ RS that 
+  is a geojson feature and 
+  has the value CUR as ~ curvature stroke colour ~ and
+  ~ corresponds to ~ the road RO.
+
+conceptualise a ~ roundabout ~ R that
+  is a geojson feature.
