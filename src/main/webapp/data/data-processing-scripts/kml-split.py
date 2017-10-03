@@ -15,21 +15,16 @@ def folder(filename, startPattern, endPattern):
       elif recording:
         yield line
 
-
 startPattern = '<Folder>'
 endPattern = '</Folder>'
 outputDirectory = 'dan_kml_split_output'
-
 commonKmlStartContents = '''<?xml version="1.0" encoding="utf-8" ?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
 <Document id="root_doc">
 '''
-
 commonKmlEndContents = '</Document></kml>'
-
 numberOfFoldersPerFile = 15
 currentNumberOfFolders = 0
-
 currentFileId = 0
 currentFileContents = ''
 

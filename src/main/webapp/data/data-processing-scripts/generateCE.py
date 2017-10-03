@@ -1,6 +1,7 @@
 # -- coding: utf-8 --
 ###
-### Copyright Dan Cunnington 2017
+### Copyright IBM 2017
+### Author: Dan Cunnington
 ###
 
 import json, os, uuid
@@ -45,6 +46,11 @@ def generateCEForFile(path):
       featureType = feature["geometry"]["type"]
       ceToWrite.append("there is a road segment named '"+str(uuid.uuid4())+"' that has '"+strokeColour+"' as curvature stroke colour and has '"+str(coordinates)+"' as coordinates and has '"+featureType+"' as geojson type and corresponds to the road '"+road_name+"'.") 
 
+def chunks(l, n):
+  n = max(1, n)
+  return (l[i:i+n] for i in xrange(0, len(l), n))
+
+
 #main entry point
 for filename in os.listdir(inputDir):
   if filename != '.DS_Store':
@@ -52,7 +58,13 @@ for filename in os.listdir(inputDir):
     currentFileProcessed += 1
     print (str(currentFileProcessed) + '/' + numberOfFiles)
 
-#write to file
-with open(outputDir+'/curvature.ce', 'w') as file:
-  file.write("\n".join(ceToWrite).encode("utf-8").strip())
+
+#divide ce list into 4 and write to file
+fileId = 0
+for chunk in chunks(ceToWrite, (len(ceToWrite)/4)):
+  fileId += 1
+  with open(outputDir+'/curvature-'+str(fileId)+'.ce', 'w') as file:
+    file.write("\n".join(chunk).encode("utf-8").strip())
+
+
 
